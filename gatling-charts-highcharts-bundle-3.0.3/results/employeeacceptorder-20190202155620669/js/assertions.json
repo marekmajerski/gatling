@@ -1,0 +1,10 @@
+{
+  "simulation": "EmployeeAcceptOrder",
+  "simulationId": "employeeacceptorder",
+  "start": 1549122980669,
+  "description": "",
+  "scenarios": ["EmployeeAcceptOrder"],
+  "assertions": [
+
+  ]
+}
