@@ -1,0 +1,65 @@
+RUN	OrderTwoItems	ordertwoitems	1549235488078	 	3.0.3
+USER	OrderTwoItems	1	START	1549235488902	1549235488902
+REQUEST	1		Open Main Page	1549235488927	1549235488931	KO	i.n.c.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:8080
+USER	OrderTwoItems	2	START	1549235489436	1549235489436
+REQUEST	2		Open Main Page	1549235489437	1549235489440	KO	i.n.c.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:8080
+USER	OrderTwoItems	3	START	1549235489937	1549235489937
+REQUEST	3		Open Main Page	1549235489938	1549235489940	KO	i.n.c.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:8080
+USER	OrderTwoItems	4	START	1549235490437	1549235490437
+REQUEST	4		Open Main Page	1549235490438	1549235490440	KO	i.n.c.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:8080
+USER	OrderTwoItems	5	START	1549235490934	1549235490934
+REQUEST	5		Open Main Page	1549235490935	1549235490937	KO	i.n.c.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:8080
+REQUEST	1		Login as a Client	1549235490951	1549235490952	KO	i.n.c.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:8080
+REQUEST	2		Login as a Client	1549235491457	1549235491459	KO	i.n.c.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:8080
+USER	OrderTwoItems	6	START	1549235491917	1549235491917
+REQUEST	6		Open Main Page	1549235491918	1549235491920	KO	i.n.c.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:8080
+REQUEST	3		Login as a Client	1549235491956	1549235491957	KO	i.n.c.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:8080
+USER	OrderTwoItems	7	START	1549235492417	1549235492417
+REQUEST	7		Open Main Page	1549235492418	1549235492420	KO	i.n.c.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:8080
+REQUEST	4		Login as a Client	1549235492457	1549235492458	KO	i.n.c.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:8080
+USER	OrderTwoItems	8	START	1549235492917	1549235492917
+REQUEST	8		Open Main Page	1549235492918	1549235492919	KO	i.n.c.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:8080
+REQUEST	5		Login as a Client	1549235492957	1549235492959	KO	i.n.c.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:8080
+USER	OrderTwoItems	9	START	1549235493416	1549235493416
+REQUEST	9		Open Main Page	1549235493417	1549235493419	KO	i.n.c.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:8080
+USER	OrderTwoItems	10	START	1549235493915	1549235493915
+REQUEST	10		Open Main Page	1549235493915	1549235493917	KO	i.n.c.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:8080
+REQUEST	6		Login as a Client	1549235493936	1549235493937	KO	i.n.c.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:8080
+REQUEST	1		Open Orders list	1549235493955	1549235493956	KO	i.n.c.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:8080
+REQUEST	7		Login as a Client	1549235494437	1549235494439	KO	i.n.c.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:8080
+REQUEST	2		Open Orders list	1549235494465	1549235494467	KO	i.n.c.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:8080
+USER	OrderTwoItems	11	START	1549235494914	1549235494914
+REQUEST	11		Open Main Page	1549235494915	1549235494917	KO	i.n.c.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:8080
+REQUEST	8		Login as a Client	1549235494935	1549235494937	KO	i.n.c.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:8080
+REQUEST	3		Open Orders list	1549235494967	1549235494970	KO	i.n.c.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:8080
+USER	OrderTwoItems	12	START	1549235495415	1549235495415
+REQUEST	12		Open Main Page	1549235495418	1549235495421	KO	i.n.c.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:8080
+REQUEST	9		Login as a Client	1549235495435	1549235495437	KO	i.n.c.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:8080
+REQUEST	4		Open Orders list	1549235495465	1549235495466	KO	i.n.c.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:8080
+USER	OrderTwoItems	13	START	1549235495914	1549235495914
+REQUEST	13		Open Main Page	1549235495915	1549235495917	KO	i.n.c.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:8080
+REQUEST	10		Login as a Client	1549235495937	1549235495938	KO	i.n.c.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:8080
+REQUEST	5		Open Orders list	1549235495956	1549235495957	KO	i.n.c.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:8080
+REQUEST	1		Open Product list	1549235495965	1549235495966	KO	i.n.c.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:8080
+USER	OrderTwoItems	14	START	1549235496414	1549235496414
+REQUEST	14		Open Main Page	1549235496416	1549235496418	KO	i.n.c.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:8080
+REQUEST	2		Open Product list	1549235496466	1549235496467	KO	i.n.c.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:8080
+USER	OrderTwoItems	15	START	1549235496915	1549235496915
+REQUEST	15		Open Main Page	1549235496916	1549235496918	KO	i.n.c.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:8080
+REQUEST	11		Login as a Client	1549235496936	1549235496937	KO	i.n.c.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:8080
+REQUEST	6		Open Orders list	1549235496946	1549235496947	KO	i.n.c.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:8080
+REQUEST	3		Open Product list	1549235496966	1549235496967	KO	i.n.c.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:8080
+REQUEST	12		Login as a Client	1549235497436	1549235497437	KO	i.n.c.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:8080
+REQUEST	7		Open Orders list	1549235497447	1549235497448	KO	i.n.c.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:8080
+REQUEST	4		Open Product list	1549235497466	1549235497467	KO	i.n.c.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:8080
+USER	OrderTwoItems	16	START	1549235497914	1549235497914
+REQUEST	16		Open Main Page	1549235497915	1549235497916	KO	i.n.c.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:8080
+REQUEST	13		Login as a Client	1549235497936	1549235497937	KO	i.n.c.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:8080
+REQUEST	8		Open Orders list	1549235497945	1549235497945	KO	i.n.c.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:8080
+REQUEST	5		Open Product list	1549235497966	1549235497967	KO	i.n.c.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:8080
+USER	OrderTwoItems	17	START	1549235498417	1549235498417
+REQUEST	17		Open Main Page	1549235498418	1549235498419	KO	i.n.c.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:8080
+REQUEST	14		Login as a Client	1549235498436	1549235498437	KO	i.n.c.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:8080
+REQUEST	9		Open Orders list	1549235498446	1549235498447	KO	i.n.c.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:8080
+USER	OrderTwoItems	18	START	1549235498915	1549235498915
+REQUEST	18		Open Main Page	1549235498916	1549235498917	KO	
