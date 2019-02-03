@@ -2,17 +2,17 @@
     {
       "product": {
         "category": {
-          "id": "string",
-          "name": "string"
+          "id": "2",
+          "name": "order"
         },
-        "company": "string",
-        "description": "string",
-        "expirationDate": "string",
-        "id": "string",
-        "name": "string",
-        "price": 0
+        "company": "1234",
+        "description": "1234",
+        "expirationDate": "2019-02-11 16:47:19",
+        "id": "10",
+        "name": "order",
+        "price": 10
       },
-      "quantity": 0
+      "quantity": 10
     }
   ],
 }
