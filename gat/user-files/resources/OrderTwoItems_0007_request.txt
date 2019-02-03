@@ -1,1 +1,18 @@
-{"status":"DRAFT","orderDate":"2019-02-02 16:47:19","items":[]}
+{"status":"DRAFT","orderDate":"2019-02-11 16:47:19","items": [
+    {
+      "product": {
+        "category": {
+          "id": "string",
+          "name": "string"
+        },
+        "company": "string",
+        "description": "string",
+        "expirationDate": "string",
+        "id": "string",
+        "name": "string",
+        "price": 0
+      },
+      "quantity": 0
+    }
+  ],
+}

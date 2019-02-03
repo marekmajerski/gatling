@@ -28,29 +28,26 @@ class EmployeeAcceptOrder extends Simulation {
 
 // first scenario to check first funcionality test
 	val scn = scenario("EmployeeAcceptOrder")
-	// open main page and check elements on page using regexp
-		.exec(http("request_0")
+		.exec(http("Open Main Page")
 			.get("/api/user/current")
 			.headers(headers_0)
 			.check(status.is(404)))
 		.pause(5)
-	// login page	TODO: set user name and password ass parameter
-		.exec(http("request_1")
+		.exec(http("Login process")
 			.post("/login")
 			.headers(headers_1)
 			.formParam("username", "employee")
 			.formParam("password", "test"))
 		.pause(2)
-		// open orders page
-		.exec(http("request_2")
+		.exec(http("Open orders page")
 			.get("/api/select/statuses")
 			.headers(headers_0)
 			.resources(http("request_3")
 			.get("/api/orders/?page=0&size=10")
 			.headers(headers_0)))
 		.pause(2)
-		// select order
-		.exec(http("request_4")
+		// TODO: find way to pass id of order to step
+		.exec(http("Select order")
 			.get("/api/orders/5c55bb94a3c66c07364187c5/statuses")
 			.headers(headers_0)
 			.resources(http("request_5")
@@ -63,8 +60,7 @@ class EmployeeAcceptOrder extends Simulation {
 			.get("/api/select/products")
 			.headers(headers_0)))
 		.pause(7)
-		// change status of order
-		.exec(http("request_8")
+		.exec(http("change status of order")
 			.put("/api/orders/5c55bb94a3c66c07364187c5")
 			.headers(headers_8)
 			.body(RawFileBody("EmployeeAcceptOrder_0008_request.txt"))
@@ -79,7 +75,6 @@ class EmployeeAcceptOrder extends Simulation {
 		.exec(http("request_11")
 			.post("/logout")
 			.headers(headers_8)
-			.body(RawFileBody("EmployeeAcceptOrder_0011_request.txt"))
 			.check(status.is(404)))
 
 	setUp(scn.inject(rampUsers(100) during (60 seconds))).protocols(httpProtocol)
