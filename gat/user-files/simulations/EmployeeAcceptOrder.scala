@@ -82,5 +82,5 @@ class EmployeeAcceptOrder extends Simulation {
 			.body(RawFileBody("EmployeeAcceptOrder_0011_request.txt"))
 			.check(status.is(404)))
 
-	setUp(scn.inject(rampUsers(100) over (60 seconds))).protocols(httpProtocol)
+	setUp(scn.inject(rampUsers(100) during (60 seconds))).protocols(httpProtocol)
 }

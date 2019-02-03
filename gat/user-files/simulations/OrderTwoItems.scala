@@ -75,5 +75,5 @@ class OrderTwoItems extends Simulation {
 			.body(RawFileBody("OrderTwoItems_0010_request.txt"))
 			.check(status.is(404)))
 
-	setUp(scn.inject(rampUsers(100) over (60 seconds))).protocols(httpProtocol)
+	setUp(scn.inject(rampUsers(100) during (60 seconds))).protocols(httpProtocol)
 }
