@@ -12,13 +12,13 @@ class EmployeeAcceptOrder extends Simulation {
 		.inferHtmlResources()
 		.acceptHeader("application/json, text/plain, */*")
 
-	val headers_0 = Map("X-Requested-With" -> "XMLHttpRequest")
+	val header = Map("X-Requested-With" -> "XMLHttpRequest")
 
 // first scenario to check first funcionality test
 	val scn = scenario("EmployeeAcceptOrder")
 		.exec(http("Open Main Page")
 			.get("/api/user/current")
-			.headers(headers_0)
+			.headers(header)
 			.check(status.is(404)))
 		.pause(5)
 		.exec(http("Login process")
