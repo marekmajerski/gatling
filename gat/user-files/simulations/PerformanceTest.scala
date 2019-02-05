@@ -15,7 +15,7 @@ class EmployeeAcceptOrder extends Simulation {
 	val header = Map("X-Requested-With" -> "XMLHttpRequest")
 
 // create order
-	val header = Map("X-Requested-With" -> "XMLHttpRequest")
+	val header1 = Map("X-Requested-With" -> "XMLHttpRequest")
 
 	val scn = scenario("OrderTwoItems")
 		.exec(http("Open Main Page")
@@ -24,13 +24,15 @@ class EmployeeAcceptOrder extends Simulation {
 		// fill parameters (it works without password :D )
 		.exec(http("Login as a Client")
 			.post("/login")
-			.headers(header)
+			.headers(header1)
 			.formParam("username", "client")
-			.formParam("password", ""))
+			.formParam("password", "test"))
 		.pause(3)
 		.exec(http("Add Order")
 			.post("/api/orders/")
-			.body(RawFileBody("OrderTwoItems_request.txt")))
+			.body(RawFileBody("OrderTwoItems_request.txt"))
+			// find way to get id to store it in second scenario
+			.check(status.is(201)))
 		.pause(2)
 		// logout
 		.exec(http("request_10")
@@ -50,13 +52,13 @@ class EmployeeAcceptOrder extends Simulation {
 			.formParam("password", "test"))
 		.pause(2)
 		.exec(http("change status of order")
+		// find way to copy generated id
 			.put("/api/orders/5c55bb94a3c66c07364187c5")
 			.body(RawFileBody("EmployeeAcceptOrder_request.txt")))
 		.pause(5)
-		// logout from app
 		.exec(http("Logout")
 			.post("/logout")
 			.check(status.is(404)))
-
+// find way how to run every scenario to use data from first scenario and accept the same project in second scenario
 	setUp(scn.inject(rampUsers(100) during (60 seconds))).protocols(httpProtocol)
 }
