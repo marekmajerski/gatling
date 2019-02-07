@@ -7,10 +7,6 @@ import io.gatling.jdbc.Predef._
 
 
 class PerformanceTest extends Simulation {
-// main application should be run at address below
-
-
-
 	val httpProtocol = http
 		.baseUrl("http://localhost:8080")
 		.inferHtmlResources()
@@ -25,18 +21,6 @@ class PerformanceTest extends Simulation {
 			.formParam("username", "client")
 			.formParam("password", "test")
 			.check(status.is(200)))
-
-		// step for easy DEBUG
-		//.exec(http("View Order Page")
-		//	.get("/api/orders/?page=1&size=10")
-		//	.check(status.is(200)))
-		//.pause(2)
-
-		// step for easy DEBUG
-		//.exec(http("Current User")
-		//	.get("/api/user/current")
-		//	.check(status.is(200)))
-		//.pause(2)
 
 		.exec(http("Add Order")
 			.post("/api/orders/")
@@ -56,16 +40,9 @@ class PerformanceTest extends Simulation {
 			.formParam("password", "test")
 			.check(status.is(200)))
 
-		// step for easy DEBUG
-		//.exec(http("Current User")
-		//	.get("/api/user/current")
-		//	.check(status.is(200)))
-		//.pause(2)
-
 		.exec(http("Change status of order")
-		 // find way to copy generated id
 			.put("/api/orders/${responseId}")
-			.body(StringBody("""{"id": "${responseId}","orderDate": "2019-02-07 14:28:39","completeDate": null,"status": "ACCEPTED"}"""))
+			.body(StringBody("""{"id": "${responseId}","completeDate": null,"status": "ACCEPTED"}"""))
 			.asJson
 			.check(status.is(200)))
 
@@ -74,6 +51,6 @@ class PerformanceTest extends Simulation {
 			.check(status.is(404)))
 
 // line for easy DEBUG
-// setUp(scn.inject(atOnceUsers(1))).protocols(httpProtocol)
-setUp(scn.inject(rampUsers(100) during (30 seconds))).protocols(httpProtocol)
+ setUp(scn.inject(atOnceUsers(1))).protocols(httpProtocol)
+// setUp(scn.inject(rampUsers(100) during (30 seconds))).protocols(httpProtocol)
 }
