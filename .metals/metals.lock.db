@@ -1,0 +1,6 @@
+#FileLock
+#Thu Feb 07 19:11:45 CET 2019
+server=192.168.100.121\:63946
+hostName=mbp-patrycja
+method=file
+id=168c928907108f8c8df4b8bd2b369c537c8269b365d
