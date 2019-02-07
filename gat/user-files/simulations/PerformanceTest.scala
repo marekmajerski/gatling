@@ -37,12 +37,12 @@ class PerformanceTest extends Simulation {
         .formParam("username", "employee")
         .formParam("password", "test")
         .check(status.is(200)))
-    .exec(http("Change status of order")
-      .put("/api/orders/${responseId}")
-      .body(StringBody(
-        """{"id": "${responseId}","completeDate": null,"status": "ACCEPTED"}"""))
-      .asJson
-      .check(status.is(200)))
+    .exec(
+      http("Change status of order")
+        .put("/api/orders/${responseId}")
+        .body(StringBody("""{"id": "${responseId}", "status": "ACCEPTED"}"""))
+        .asJson
+        .check(status.is(200)))
     .exec(http("Employee Logout")
       .post("/logout")
       .check(status.is(404)))
