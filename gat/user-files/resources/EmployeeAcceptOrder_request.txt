@@ -1,7 +1,0 @@
-{
-"id":"",
-"items":[],
-"orderDate":"2019-02-02 16:47:32",
-"completeDate":null,
-"status":"ACCEPTED"
-}

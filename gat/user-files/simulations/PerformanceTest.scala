@@ -25,17 +25,18 @@ class PerformanceTest extends Simulation {
 			.formParam("username", "client")
 			.formParam("password", "test")
 			.check(status.is(200)))
-		.pause(2)
 
-		.exec(http("View Order Page")
-			.get("/api/orders/?page=1&size=10")
-			.check(status.is(200)))
-		.pause(2)
+		// step for easy DEBUG
+		//.exec(http("View Order Page")
+		//	.get("/api/orders/?page=1&size=10")
+		//	.check(status.is(200)))
+		//.pause(2)
 
-		.exec(http("Current User")
-			.get("/api/user/current")
-			.check(status.is(200)))
-		.pause(2)
+		// step for easy DEBUG
+		//.exec(http("Current User")
+		//	.get("/api/user/current")
+		//	.check(status.is(200)))
+		//.pause(2)
 
 		.exec(http("Add Order")
 			.post("/api/orders/")
@@ -44,7 +45,6 @@ class PerformanceTest extends Simulation {
 			.asJson
 			.check(status.is(200))
 			.check(jsonPath("$.id").saveAs("responseId")))
-		.pause(2)
 
 		.exec(http("Client Logout")
 			.post("/logout")
@@ -55,12 +55,12 @@ class PerformanceTest extends Simulation {
 			.formParam("username", "employee")
 			.formParam("password", "test")
 			.check(status.is(200)))
-		.pause(2)
 
-		.exec(http("Current User")
-			.get("/api/user/current")
-			.check(status.is(200)))
-		.pause(2)
+		// step for easy DEBUG
+		//.exec(http("Current User")
+		//	.get("/api/user/current")
+		//	.check(status.is(200)))
+		//.pause(2)
 
 		.exec(http("Change status of order")
 		 // find way to copy generated id
@@ -68,7 +68,6 @@ class PerformanceTest extends Simulation {
 			.body(StringBody("""{"id": "${responseId}","orderDate": "2019-02-07 14:28:39","completeDate": null,"status": "ACCEPTED"}"""))
 			.asJson
 			.check(status.is(200)))
-		.pause(5)
 
 		.exec(http("Employee Logout")
 			.post("/logout")
