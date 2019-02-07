@@ -73,7 +73,7 @@ class PerformanceTest extends Simulation {
 			.post("/logout")
 			.check(status.is(404)))
 
-// line for easier DEBUG
+// line for easy DEBUG
 // setUp(scn.inject(atOnceUsers(1))).protocols(httpProtocol)
 setUp(scn.inject(rampUsers(100) during (10 seconds))).protocols(httpProtocol)
 }
