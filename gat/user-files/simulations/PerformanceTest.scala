@@ -20,16 +20,12 @@ class PerformanceTest extends Simulation {
         .formParam("username", "client")
         .formParam("password", "test")
         .check(status.is(200)))
-    .exec(
-      http("Get first category id")
-        .get("/api/select/categories")
-        .check(status.is(200))
-        .check(jsonPath("$..id").saveAs("categoryId")))
-    .exec(
-      http("Get first product id")
-        .get("/api/select/products")
-        .check(status.is(200))
-        .check(jsonPath("$..id").saveAs("productId")))
+    .exec(http("Get first category id")
+      .get("/api/select/categories")
+      .check(jsonPath("$..id").saveAs("categoryId")))
+    .exec(http("Get first product id")
+      .get("/api/select/products")
+      .check(jsonPath("$..id").saveAs("productId")))
     .exec(
       http("Add Order")
         .post("/api/orders/")
@@ -56,7 +52,7 @@ class PerformanceTest extends Simulation {
         """))
         .asJson
         .check(status.is(200))
-        .check(jsonPath("$.id").saveAs("responseId")))
+        .check(jsonPath("$.id").saveAs("orderId")))
     .exec(http("Client Logout")
       .post("/logout")
       .check(status.is(404)))
@@ -68,13 +64,18 @@ class PerformanceTest extends Simulation {
         .check(status.is(200)))
     .exec(
       http("Change status of order")
-        .put("/api/orders/${responseId}")
-        .body(StringBody("""{"id": "${responseId}", "status": "ACCEPTED"}"""))
+        .put("/api/orders/${orderId}")
+        .headers(HeadersJSON)
+        .body(StringBody("""{"id": "${orderId}", "status": "ACCEPTED"}"""))
         .asJson
         .check(status.is(200)))
+    //step to cancel orders to clear system after scenarios
+    //.exec(
+    //  http("Delete created Order")
+    //    .delete("/api/orders/${orderId}")
+    //    .check(status.is(200)))
     .exec(http("Employee Logout")
       .post("/logout")
-      .check(status.is(404))) */
-
-  setUp(scn.inject(rampUsers(1) during (30 seconds))).protocols(httpProtocol)
+      .check(status.is(404)))
+  setUp(scn.inject(rampUsers(10000) during (30 seconds))).protocols(httpProtocol)
 }
