@@ -15,5 +15,5 @@ TODO:
 4. Add after scenario to clear data
 
 
-HINT: you can decrease log level by comment logback.xml line
+HINT: you can increase log level by comment logback.xml line
 `<logger name="io.gatling.http.engine.response" level="TRACE" /> `
