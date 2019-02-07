@@ -1,0 +1,10 @@
+{
+  "simulation": "PerformanceTest",
+  "simulationId": "performancetest",
+  "start": 1549553089849,
+  "description": "",
+  "scenarios": ["OrderItemsAndAcceptOrder"],
+  "assertions": [
+
+  ]
+}

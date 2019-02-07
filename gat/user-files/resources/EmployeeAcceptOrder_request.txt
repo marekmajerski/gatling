@@ -1,11 +1,6 @@
 {
-"id":"5c55bb94a3c66c07364187c5",
+"id":"",
 "items":[],
-"client":
-  {
-  "id":"5c54a75fa3c66c07364187a6",
-  "name":"Client Test 1"
-  },
 "orderDate":"2019-02-02 16:47:32",
 "completeDate":null,
 "status":"ACCEPTED"
