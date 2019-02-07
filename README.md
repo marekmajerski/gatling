@@ -11,6 +11,7 @@ steps to run Performance Tests
 TODO:
 1. Add regexp to check dome elements instead checking 404 response code
 2. Improve JSON to cover funcional Tests
+3. https://docs.scala-lang.org/style/ find good code style for gatling DSL
 
 HINT: you can decrease log level by comment logback.xml line
 `<logger name="io.gatling.http.engine.response" level="TRACE" /> `
