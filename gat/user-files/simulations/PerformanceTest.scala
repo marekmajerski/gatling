@@ -64,8 +64,8 @@ class PerformanceTest extends Simulation {
 
 		.exec(http("Change status of order")
 		 // find way to copy generated id
-			.put("/api/orders/5c5c3288a3c66c16f41163ae")
-			.body(StringBody("""{"id": "5c5c3288a3c66c16f41163ae","orderDate": "2019-02-07 14:28:39","completeDate": null,"status": "ACCEPTED"}"""))
+			.put("/api/orders/${responseId}")
+			.body(StringBody("""{"id": "${responseId}","orderDate": "2019-02-07 14:28:39","completeDate": null,"status": "ACCEPTED"}"""))
 			.asJson
 			.check(status.is(200)))
 		.pause(5)
@@ -74,6 +74,7 @@ class PerformanceTest extends Simulation {
 			.post("/logout")
 			.check(status.is(404)))
 
-setUp(scn.inject(atOnceUsers(1))).protocols(httpProtocol)
-//	setUp(scn.inject(rampUsers(2) during (10 seconds))).protocols(httpProtocol)
+// line for easier DEBUG
+// setUp(scn.inject(atOnceUsers(1))).protocols(httpProtocol)
+setUp(scn.inject(rampUsers(100) during (10 seconds))).protocols(httpProtocol)
 }
