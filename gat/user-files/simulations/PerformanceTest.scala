@@ -39,10 +39,10 @@ class PerformanceTest extends Simulation {
                 "items": [
                   {
                     "product": {
-                      "id": "5c5c6573a3c66c1e561fa63b",
+                      "id": "${productId}",
                       "name": "Testowy produkt 1",
                       "category": {
-                        "id": "5c5c6573a3c66c1e561fa62c"
+                        "id": "${categoryId}"
                       },
                       "price": 1,
                       "expirationDate": null
@@ -57,7 +57,7 @@ class PerformanceTest extends Simulation {
         .asJson
         .check(status.is(200))
         .check(jsonPath("$.id").saveAs("responseId")))
-/*    .exec(http("Client Logout")
+    .exec(http("Client Logout")
       .post("/logout")
       .check(status.is(404)))
     .exec(
