@@ -21,14 +21,43 @@ class PerformanceTest extends Simulation {
         .formParam("password", "test")
         .check(status.is(200)))
     .exec(
+      http("Get first category id")
+        .get("/api/select/categories")
+        .check(status.is(200))
+        .check(jsonPath("$..id").saveAs("categoryId")))
+    .exec(
+      http("Get first product id")
+        .get("/api/select/products")
+        .check(status.is(200))
+        .check(jsonPath("$..id").saveAs("productId")))
+    .exec(
       http("Add Order")
         .post("/api/orders/")
         .headers(HeadersJSON)
-        .body(RawFileBody("test.txt"))
+        .body(StringBody("""{
+                "id": "",
+                "items": [
+                  {
+                    "product": {
+                      "id": "5c5c6573a3c66c1e561fa63b",
+                      "name": "Testowy produkt 1",
+                      "category": {
+                        "id": "5c5c6573a3c66c1e561fa62c"
+                      },
+                      "price": 1,
+                      "expirationDate": null
+                    },
+                    "quantity": 10,
+                    "id": 1
+                  }
+                ],
+                "status": "DRAFT"
+                }
+        """))
         .asJson
         .check(status.is(200))
         .check(jsonPath("$.id").saveAs("responseId")))
-    .exec(http("Client Logout")
+/*    .exec(http("Client Logout")
       .post("/logout")
       .check(status.is(404)))
     .exec(
@@ -45,7 +74,7 @@ class PerformanceTest extends Simulation {
         .check(status.is(200)))
     .exec(http("Employee Logout")
       .post("/logout")
-      .check(status.is(404)))
+      .check(status.is(404))) */
 
-  setUp(scn.inject(rampUsers(10) during (30 seconds))).protocols(httpProtocol)
+  setUp(scn.inject(rampUsers(1) during (30 seconds))).protocols(httpProtocol)
 }
